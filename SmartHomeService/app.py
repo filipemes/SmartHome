@@ -17,8 +17,8 @@ config = {
 firebase = pyrebase.initialize_app(config)
 realTimeDatabase = firebase.database()
 push_service = FCMNotification(api_key="AAAAhmubfdI:APA91bFB7IVfzvwjQP1qM-IMdMD1fDdwC5HstLYDbnbSy3FQPtYzFnpgixxtWGqbflYSWRGp28TTHstWdn4m4he1zi514zlm5VTCFIh4fSrXP_I3g-nc9xWpyofsNBGcrd6jFkEtoV4P")
-############# Functions ########
 
+############# Functions ########
 def on_connect(client, userdata, flags, rc):
     if rc == 0:
         print("**** Connected to broker ****")
