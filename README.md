@@ -45,17 +45,18 @@
 
 ![Node1 Sketch](images/node2.png)
 
-## APIs
-
-- [Firebase Realtime Database](https://firebase.google.com/docs/database) 
-
-- [Firebase Cloud Messaging](https://firebase.google.com/docs/cloud-messaging)
-
-- [Dark Sky API](https://darksky.net/dev) 
 
 ## App GUIs
 
 ![GUI](images/app_gui.png)
+
+## APIs
+
+- [Firebase Cloud Messaging](https://firebase.google.com/docs/cloud-messaging)
+
+- [Firebase Realtime Database](https://firebase.google.com/docs/database) 
+
+- [Dark Sky API](https://darksky.net/dev) 
 
 ## Author
 
