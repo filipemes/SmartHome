@@ -47,11 +47,11 @@
 
 ## APIs
 
-- Firebase Realtime Database
+- [Firebase Realtime Database](https://firebase.google.com/docs/database) 
 
-- Firebase Cloud Messaging
+- [Firebase Cloud Messaging](https://firebase.google.com/docs/cloud-messaging)
 
-- Dark Sky API
+- [Dark Sky API](https://darksky.net/dev) 
 
 ## App GUIs
 
