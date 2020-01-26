@@ -30,22 +30,21 @@ def on_connect(client, userdata, flags, rc):
 def on_message(client, userdata, msg):
     if len(str(msg.payload.decode("utf-8","ignore")))>0:
         payload=json.loads(str(msg.payload.decode("utf-8","ignore")))
+        
+    time=strftime("%d-%m-%Y %H:%M", gmtime())
     if msg.topic=='updateMoisturePercentage':
         print("Log: Received a message with topic updateMoisturePercentage")
-        lastMeasure=strftime("%d-%m-%Y %H:%M", gmtime())
-        realTimeDatabase.child("node2").update({"lastMeasure":lastMeasure,"moisturePercentage":payload["moisturePercentage"]})
+        realTimeDatabase.child("node2").update({"lastMeasure":time,"moisturePercentage":payload["moisturePercentage"]})
     elif msg.topic=='updateStateNode1':
         print("Log: Received a message with topic updateStateNode1")
         print(str(msg.payload.decode("utf-8","ignore")))
         realTimeDatabase.child("node1").update({"fanState":payload["fanState"],"threshold":payload["threshold"],"temperature":payload["temperature"],"humidityPercentage":payload["humidityPercentage"],"gasConcentration":payload["gasConcentration"]})
     elif msg.topic=='updateWatering':
         print("Log: Received a message with topic updateWatering")
-        lastWatering=strftime("%d-%m-%Y %H:%M", gmtime())
-        realTimeDatabase.child("node2").update({"lastWatering":lastWatering})
+        realTimeDatabase.child("node2").update({"lastWatering":time})
     elif msg.topic=='notifyGasAlert':
         print("Log: Received a message with topic notifyGasAlert")
-        lastAlert=strftime("%d-%m-%Y %H:%M", gmtime())
-        realTimeDatabase.child("node1").update({"lastAlert":lastAlert,"gasConcentration":payload["gasConcentration"]})
+        realTimeDatabase.child("node1").update({"lastAlert":time,"gasConcentration":payload["gasConcentration"]})
         registration_id = "euDVbMZD9vA:APA91bEuTJ1hsQvNASkB2c314PMf3BwH2-4OuXuQFn2-l9YdyqolplbPCKtMdSj_dHc6Jo2vNBoKoauOauZFmcKTTXjceYF31jcAl4s_QdwY0oVYiaZubZs5ViF0ghXRLIyuhy8y9IRv"
         message_title = "Alert - Gas Notification"
         message_body = "Unusual Gas Values, call the authorities"
