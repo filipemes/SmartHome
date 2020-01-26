@@ -65,7 +65,7 @@ def stream_handler(message):
         mqttClient.publish("setThreshold",json.dumps(payloadToSend))
         print("Published a message with topic setThreshold")
 
-def starting_firebase_worker_thread():
+def starting_firebase_thread():
     realTimeDatabase.child("node1").stream(stream_handler)
 
 mqttClient = mqtt.Client("Gateway")
@@ -75,7 +75,7 @@ mqttClient.on_message = on_message
 mqttClient.connect("192.168.43.127",12948,60)
 try:
     try:
-        _thread.start_new_thread( starting_firebase_worker_thread,())
+        _thread.start_new_thread( starting_firebase_thread,())
     except:
         print ("Error: unable to start thread")
     mqttClient.loop_forever()
