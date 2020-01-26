@@ -1,0 +1,14 @@
+SmartHomeApp/*.iml
+SmartHomeApp/.gradle
+SmartHomeApp/local.properties
+SmartHomeApp/.idea/caches
+SmartHomeApp/.idea/libraries
+SmartHomeApp/.idea/modules.xml
+SmartHomeApp/.idea/workspace.xml
+SmartHomeApp/.idea/navEditor.xml
+SmartHomeApp/.idea/assetWizardSettings.xml
+SmartHomeApp/.DS_Store
+SmartHomeApp/build
+SmartHomeApp/captures
+SmartHomeApp/.externalNativeBuild
+SmartHomeApp/.cxx

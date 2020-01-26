@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E4E8F1"
+    >
+    <LinearLayout
+        android:background="@drawable/bg_7"
+        android:layout_width="match_parent"
+        android:layout_height="140dp"
+        android:gravity="center"
+        android:id="@+id/text_view_main_menu"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:fontFamily="Myriad Pro"
+            android:gravity="center"
+            android:text="@string/title_header_home"
+            android:textColor="#FFFFFF"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            app:fontFamily="sans-serif-condensed-medium" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:fontFamily="Myriad Pro"
+            android:gravity="center"
+            android:text="@string/subtitle_header"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:textStyle="italic"
+            app:fontFamily="sans-serif-light" />
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_below="@+id/text_view_main_menu"
+        android:layout_gravity="center"
+        android:scrollbars="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#E4E8F1"
+        android:orientation="vertical">
+
+        <GridLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:columnCount="2"
+            android:orientation="horizontal"
+            android:paddingTop="235dp"
+            android:rowCount="3"
+            android:useDefaultMargins="false">
+
+            <LinearLayout
+                android:layout_width="160dp"
+                android:layout_height="215dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/round_rect_shape"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="Myriad Pro"
+                    android:gravity="center"
+                    android:text="@string/temperatureTitle"
+                    android:textAlignment="center"
+                    android:textColor="#0e81d1"
+                    android:textSize="15sp" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="20dp"
+                    android:src="@drawable/thermometer_icon" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:layout_gravity="left|top"
+                    android:layout_marginTop="20dp">
+
+                    <TextView
+                        android:id="@+id/temperatureTextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:gravity="center_horizontal|center_vertical"
+                        android:text="19º C"
+                        android:textSize="30dp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="160dp"
+                android:layout_height="215dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/round_rect_shape"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="Myriad Pro"
+                    android:gravity="center"
+                    android:text="@string/fanSwitchTitle"
+                    android:textAlignment="center"
+                    android:textColor="#0e81d1"
+                    android:textSize="15sp" />
+
+                <ImageView
+                    android:id="@+id/fan_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_row="0"
+                    android:layout_column="0"
+                    android:layout_margin="20dp"
+                    android:src="@drawable/fan_1" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_gravity="left|top">
+
+                    <Switch
+                        android:id="@+id/switchFan"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_row="0"
+                        android:layout_column="3"
+                        android:gravity="center"
+                        android:paddingLeft="30dp"
+                        android:paddingRight="30dp"
+                        android:text="Turn Off/On"
+                        android:textColor="#6F6F6F"
+                        android:textOff="OFF"
+                        android:textOn="ON"
+                        android:theme="@style/MySwitch" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_gravity="left|top">
+
+                    <Button
+                        android:id="@+id/decreaseThreshold"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="10dp"
+                        android:background="@drawable/button"
+                        android:clickable="true"
+                        android:text="@string/buttonDecreaseTemperature"
+                        android:textColor="#FFFFFF"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/textViewThreshold"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="25" />
+
+                    <Button
+                        android:id="@+id/increaseThreshold"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:background="@drawable/button"
+                        android:clickable="true"
+                        android:text="@string/buttonIncreaseTemperature"
+                        android:textColor="#FFFFFF"
+                        android:textSize="20sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="160dp"
+                android:layout_height="215dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/round_rect_shape"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="Myriad Pro"
+                    android:gravity="center"
+                    android:text="@string/HumidityTitle"
+                    android:textAlignment="center"
+                    android:textColor="#0e81d1"
+                    android:textSize="15sp" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_row="0"
+                    android:layout_column="0"
+                    android:layout_margin="20dp"
+                    android:src="@drawable/humidity_icon" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left|top"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/roomHumidityPercentage"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:text="30%"
+                        android:textSize="30dp"
+                        android:textAlignment="center" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="160dp"
+                android:layout_height="215dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/round_rect_shape"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="Myriad Pro"
+                    android:gravity="center"
+                    android:text="@string/wateringTitle"
+                    android:textAlignment="center"
+                    android:textColor="#0e81d1"
+                    android:textSize="15sp" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_row="0"
+                    android:layout_column="0"
+                    android:layout_margin="20dp"
+                    android:src="@drawable/watering_monitoring" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left|top"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/lastWatering"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:text="Last Watering: 25-09-2019 16:00"
+                        android:textAlignment="center" />
+
+                    <TextView
+                        android:id="@+id/moisturePercentage"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Moisture percentage: 90%"
+                        android:textAlignment="center" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="160dp"
+                android:layout_height="215dp"
+                android:layout_marginRight="5dp"
+                android:background="@drawable/round_rect_shape"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="Myriad Pro"
+                    android:gravity="center"
+                    android:text="@string/gasMonitoringTitle"
+                    android:textAlignment="center"
+                    android:textColor="#0e81d1"
+                    android:textSize="15sp" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:layout_row="0"
+                    android:layout_column="0"
+                    android:layout_margin="20dp"
+                    android:src="@drawable/gas_monitoring" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left|top"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/lastAlert"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:text="Last Alert 25-09-2019 16:00"
+                        android:textAlignment="center" />
+
+                    <TextView
+                        android:id="@+id/gasConcentration"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Gas concentration: 333"
+                        android:textAlignment="center" />
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="160dp"
+                android:layout_height="215dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/round_rect_shape"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="Myriad Pro"
+                    android:gravity="center"
+                    android:text="@string/IPCameraTitle"
+                    android:textAlignment="center"
+                    android:textColor="#0e81d1"
+                    android:textSize="15sp" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left|top"
+                    android:orientation="vertical">
+                    <VideoView
+                        android:id="@+id/videoViewStream"
+                        android:layout_margin="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"/>
+                </LinearLayout>
+            </LinearLayout>
+        </GridLayout>
+    </ScrollView>
+</RelativeLayout>

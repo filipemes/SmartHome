@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="MySwitch" parent="@style/Widget.AppCompat.CompoundButton.Switch">
+        <item name="android:textColorPrimaryDisableOnly">#387FCC</item>
+        <item name="android:colorControlActivated">#387FCC</item>
+        <item name="android:colorForeground">#2876D3</item>
+        <item name="colorSwitchThumbNormal">#2876D3</item>
+        <item name="android:textAppearance">@style/TextAppearance.AppCompat</item>
+    </style>
+
+
+</resources>

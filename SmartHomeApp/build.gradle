@@ -1,0 +1,28 @@
+
+buildscript {
+    repositories {
+        google()
+        jcenter()
+        mavenCentral()
+        
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.5.3'
+        classpath 'pl.droidsonroids.gif:android-gif-drawable:1.2.19'
+        classpath 'com.google.gms:google-services:4.3.2'
+
+    }
+}
+
+allprojects {
+    repositories {
+        mavenCentral()
+        google()
+        jcenter()
+        
+    }
+}
+
+task cleanAux(type: Delete) {
+    delete rootProject.buildDir
+}

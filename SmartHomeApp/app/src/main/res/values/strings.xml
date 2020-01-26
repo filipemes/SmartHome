@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">SmartHomeApp</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_header_home">Smart Home App</string>
+    <string name="temperatureTitle">Temperature</string>
+    <string name="gasMonitoringTitle">Gas Monitoring</string>
+    <string name="fanSwitchTitle">Air Conditioning</string>
+    <string name="buttonIncreaseTemperature">+</string>
+    <string name="buttonDecreaseTemperature">-</string>
+    <string name="wateringTitle">Watering monitoring</string>
+    <string name="subtitle_header">Home Automation</string>
+    <string name="HumidityTitle">Humidity</string>
+    <string name="IPCameraTitle">IP Camera</string>
+</resources>
