@@ -53,7 +53,7 @@
 
 - Dark Sky API
 
-## Android App GUIs
+## App GUIs
 
 ![GUI](images/app_gui.png)
 
