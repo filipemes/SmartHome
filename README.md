@@ -2,6 +2,7 @@
 
 ## Project Concept
 
+This is a simple IoT project that aims to monitor and control homes' enviroment.
 
 ## Project Architecture
 
