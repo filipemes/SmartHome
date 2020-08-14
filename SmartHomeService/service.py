@@ -33,23 +33,17 @@ def on_message(client, userdata, msg):
         
     time=strftime("%d-%m-%Y %H:%M", gmtime())
     if msg.topic=='updateMoisturePercentage':
-        print("Log: Received a message with topic updateMoisturePercentage")
         realTimeDatabase.child("node2").update({"lastMeasure":time,"moisturePercentage":payload["moisturePercentage"]})
     elif msg.topic=='updateStateNode1':
-        print("Log: Received a message with topic updateStateNode1")
-        print(str(msg.payload.decode("utf-8","ignore")))
         realTimeDatabase.child("node1").update({"fanState":payload["fanState"],"threshold":payload["threshold"],"temperature":payload["temperature"],"humidityPercentage":payload["humidityPercentage"],"gasConcentration":payload["gasConcentration"]})
     elif msg.topic=='updateWatering':
-        print("Log: Received a message with topic updateWatering")
         realTimeDatabase.child("node2").update({"lastWatering":time})
     elif msg.topic=='notifyGasAlert':
-        print("Log: Received a message with topic notifyGasAlert")
         realTimeDatabase.child("node1").update({"lastAlert":time,"gasConcentration":payload["gasConcentration"]})
         registration_id = "euDVbMZD9vA:APA91bEuTJ1hsQvNASkB2c314PMf3BwH2-4OuXuQFn2-l9YdyqolplbPCKtMdSj_dHc6Jo2vNBoKoauOauZFmcKTTXjceYF31jcAl4s_QdwY0oVYiaZubZs5ViF0ghXRLIyuhy8y9IRv"
         message_title = "Alert - Gas Notification"
         message_body = "Unusual Gas Values, call the authorities"
         result = push_service.notify_single_device(registration_id=registration_id, message_title=message_title, message_body=message_body)
-        print(result)
 
 def stream_handler(message):
     if message["path"]=="/fanState":
@@ -57,13 +51,11 @@ def stream_handler(message):
             "fanState":message["data"]
         }
         mqttClient.publish("setFanState",json.dumps(payloadToSend))
-        print("Published a message with topic setFanState")
     elif message["path"]=="/threshold":
         payloadToSend={
             "threshold":message["data"]
         }
         mqttClient.publish("setThreshold",json.dumps(payloadToSend))
-        print("Published a message with topic setThreshold")
 
 def starting_firebase_thread():
     realTimeDatabase.child("node1").stream(stream_handler)
