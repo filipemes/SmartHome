@@ -4,10 +4,6 @@
 
 This is a simple IoT project that aims to monitor and control the home environment.
 
-## Project Architecture
-
-@missing
-
 ## Sequence Diagrams
 
 
