@@ -55,6 +55,8 @@ This is a simple IoT project that aims to monitor and control the home environme
 - [Firebase Realtime Database](https://firebase.google.com/docs/database) 
 
 - [Dark Sky API](https://darksky.net/dev) 
+- 
+**Development Date:** December 2019
 
 ## Author
 
